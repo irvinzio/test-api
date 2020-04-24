@@ -1,0 +1,8 @@
+<p *ngIf="!directoryViewList"><em>Loading...</em></p>
+<button (click)="changeToLandscape()">Landscape</button>
+
+<div class="box-container" *ngIf="directoryViewList" (scroll)="onScroll($event)" [style.width]="conatinerWidth+'px'"  [style.height]="containerHeight+'px'">
+  <div class="box-item" *ngFor="let dir of directoryViewList" [ngStyle]="{'background-image': 'url('+ dir.di_image +')'}">
+    <p>{{ dir.title }}</p>
+  </div>
+</div>
